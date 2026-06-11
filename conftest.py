@@ -13,7 +13,7 @@ def page():
 HOME_PAGE="https://automationexercise.com/"
 #Sign up details
 REGISTER_NAME ="KARTHIK"
-EMAIL ="testerrom112@gmail.com"
+EMAIL ="testerrom1123@gmail.com"
 REGISTER_PASSWORD="Royalmech@777"
 FIRST_NAME="Karthik"
 lAST_NAME="Kishor"
