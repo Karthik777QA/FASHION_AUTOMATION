@@ -21,6 +21,10 @@ def test_signup(page):
     signup.verify("p:has-text('Congratulations! Your new account has been successfully created!')")#Verify the account is created
     print("Account is created successfully")
     signup.continue_button() #click on the continue button
+    if "google_vignette" in page.url:
+        page.goto("https://automationexercise.com/")
+
+    page.wait_for_load_state("networkidle")
     signup.verify_user_name("ul[class='nav navbar-nav'] li a b","KARTHIK") #verify the username in the home page
     print("The User is correct in the home page")
 

@@ -33,6 +33,13 @@ jobs:
         run: |
           pytest tests -v --html=Reports/report.html --self-contained-html
 
+      - name: Upload Screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Failure-Screenshots
+          path: Screenshots/
+
       - name: Upload Reports
         if: always()
         uses: actions/upload-artifact@v4
