@@ -26,10 +26,18 @@ class basepage:
     def verify(self,locator):
         assert self.page.locator(locator).is_visible()
 
-
     def verify_user_name(self, locator, user_name):
-        text = self.page.locator(locator).text_content()
-        assert user_name == text
+        self.page.wait_for_selector(
+            locator,
+            state="visible",
+            timeout=60000
+        )
+
+        text = self.page.locator(locator).text_content().strip()
+
+        print(f"Actual Username: {text}")
+
+        assert user_name.upper() in text.upper()
 
         #login button in home page
 

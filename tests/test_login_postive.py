@@ -10,6 +10,7 @@ def test_login_correct(page):
     print("Landed in the home page")
     login_EP.click_login()
     login_EP.login_set()
-    login_EP.verify_user_name("ul[class='nav navbar-nav'] li a b","KARTHIK")
+    login_EP.verify_user_name("ul[class='nav navbar-nav'] li a b",REGISTER_NAME)
+    print("User name is correct")
 
 

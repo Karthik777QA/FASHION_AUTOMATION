@@ -14,7 +14,7 @@ def test_signup(page):
     signup.verify(":text('New User Signup!')")#accertion to check the landing on the signup page
     print("The page is visible successfully")
     signup.sign_up()#Signup with email and password
-    #signup.verify("b:has-text('ENTER ACCOUNT INFORMATION')")#Verify the landing on the registration page
+    signup.verify("b:has-text('ENTER ACCOUNT INFORMATION')")#Verify the landing on the registration page
     print("Landed on Registration page")
     signup.register()     #Filling Registration form
     time.sleep(7)
