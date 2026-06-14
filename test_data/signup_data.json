@@ -1,0 +1,27 @@
+{
+  "users1":
+
+{
+  "home_page": "https://automationexercise.com/",
+
+  "signup_details": {
+    "register_name": "KARTHIK",
+    "email": "karthik@gmail.com",
+    "register_password": "Royalmech@777",
+    "first_name": "Karthik",
+    "last_name": "Kishor",
+    "company_name": "TEST SUITE",
+    "address1": "SMART CITY INFOPARK",
+    "address2": "opp phase 2 campus kakkand",
+    "state": "KERALA",
+    "city": "KOCHI",
+    "zipcode": "680675",
+    "mobile": "8932485912"
+  },
+
+  "login_credentials": {
+    "email_login": "testerrom145@gmail.com",
+    "password": "Royalmech@777"
+  }
+}
+}

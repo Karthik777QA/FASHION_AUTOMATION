@@ -19,10 +19,10 @@ class login_page(basepage):
     def click_login(self):
         self.login_button(self.Login_buttons_home)
 
-    def login_set(self):
+    def login_set(self,login_details):
 
-        self.locate(self.login_email,EMAIL_LOGIN)
-        self.locate(self.login_password,REGISTER_PASSWORD)
+        self.locate(self.login_email,login_details["email"])
+        self.locate(self.login_password,login_details["register_password"])
         self.locate_click(self.login_buttons)
 
 
