@@ -26,9 +26,12 @@ class basepage:
     def verify(self,locator):
         assert self.page.locator(locator).is_visible()
 
-
     def verify_user_name(self, locator, user_name):
         text = self.page.locator(locator).text_content()
+
+        print("Expected:", user_name)
+        print("Actual:", text)
+
         assert user_name == text
 
         #login button in home page

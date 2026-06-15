@@ -1,7 +1,7 @@
 import time
-
+from Utils.data_generator import generate_email
 from Pages.basepage import basepage
-from conftest import *
+
 class Signup(basepage):
     def __init__(self,page):
         super().__init__(page)
@@ -41,30 +41,30 @@ class Signup(basepage):
 
     def click_login(self):
         self.login_button(self.Login_buttons)
-    def sign_up(self):
-        self.placeholder(self.Register_name, REGISTER_NAME)
-        self.page.locator(self.Register_email).fill(EMAIL)
+    def sign_up(self,signup_data):
+        self.placeholder(self.Register_name, signup_data["register_name"])
+        self.page.locator(self.Register_email).fill(generate_email())
         self.role_click(self.Signup_button)
-    def register(self):
+    def register(self,signup_data):
 
         self.check_box(self.Mr_radio_button)
-        self.role(self.Register_Password, REGISTER_PASSWORD)
+        self.role(self.Register_Password, signup_data["register_password"])
         #Date of birth
         self.select(self.Day_drop_down,self.Day_options)
         self.select(self.Month_drop_down,self.Month_options)
         self.select(self.Year_drop_down,self.Year_options)
         self.check_box(self.Newsletter_check_box)
         #Address
-        self.role(self.First_name,FIRST_NAME)
-        self.label(self.Last_name,lAST_NAME)
-        self.locate(self.Company_name,COMPANY_NAME)
-        self.role(self.Address1,ADDRESS1)
-        self.role(self.Address2,ADDRESS2)
+        self.role(self.First_name,signup_data["first_name"])
+        self.label(self.Last_name,signup_data["last_name"])
+        self.locate(self.Company_name,signup_data["company_name"])
+        self.role(self.Address1,signup_data["address1"])
+        self.role(self.Address2,signup_data["address2"])
         self.select(self.Country_dropdown,self.Country_option)
-        self.role(self.State,STATE)
-        self.role(self.City,CITY)
-        self.locate(self.zip_code,ZIPCODE)
-        self.role(self.Mobile,MOBILE)
+        self.role(self.State,signup_data["state"])
+        self.role(self.City,signup_data["city"])
+        self.locate(self.zip_code,signup_data["zipcode"])
+        self.role(self.Mobile,signup_data["mobile"])
         self.role_click(self.Create_button)
         time.sleep(10)
 
