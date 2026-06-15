@@ -2,7 +2,7 @@ from pydoc import locate
 
 from Pages.basepage import basepage
 
-
+from conftest import *
 
 
 class login_page(basepage):
@@ -19,10 +19,10 @@ class login_page(basepage):
     def click_login(self):
         self.login_button(self.Login_buttons_home)
 
-    def login_set(self,login_data):
+    def login_set(self,login_details):
 
-        self.locate(self.login_email,login_data["email_login"])
-        self.locate(self.login_password,login_data["password_login"])
+        self.locate(self.login_email,login_details["email"])
+        self.locate(self.login_password,login_details["register_password"])
         self.locate_click(self.login_buttons)
 
 

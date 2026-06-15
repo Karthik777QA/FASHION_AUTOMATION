@@ -28,7 +28,4 @@ def pytest_runtest_makereport(item, call):
                 full_page=True
             )
 
-HOME_PAGE="https://automationexercise.com/"
-#Sign up details
-
 
