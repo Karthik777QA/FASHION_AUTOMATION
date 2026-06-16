@@ -9,14 +9,16 @@ def test_signup(page):
     import os
 
     print(os.getcwd())
-    data =Datareader.jason_parser("test_data/signup_data.json")
+    data =Datareader.jason_parser("Test_data/sign_up.json")
     user=data["users1"]
     signup_data =user["signup_details"]
+    url = Datareader.jason_parser("config/config.json")
+    home= url["qa"]
 
 
 
     signup=Signup(page)
-    signup.page.goto(user["home_page"],wait_until="networkidle",
+    signup.page.goto(home["base_url"],wait_until="networkidle",
     timeout=60000)
 
     signup.verify("//div[@class='carousel-inner']//div[1]//div[1]//h1[1]//span[1]")#accertion to check the landing on home page.

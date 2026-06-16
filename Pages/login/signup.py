@@ -1,5 +1,5 @@
 import time
-from Utils.data_generator import generate_email
+from utils.data_generator import generate_email
 from Pages.basepage import basepage
 
 class Signup(basepage):
